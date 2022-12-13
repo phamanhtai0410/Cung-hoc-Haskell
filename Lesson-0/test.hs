@@ -1,4 +1,3 @@
 main = do
-  x = 5
-  x = 7
-  putStr x
+  let list = [1, 3 .. 22]
+  putStrLn $ show list
