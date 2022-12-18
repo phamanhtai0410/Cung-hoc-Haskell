@@ -44,8 +44,9 @@ f4 x y z = x == (y ++ z)
 -- ANS
 --   Yes we can
 --   Example below:
-a::[[Integer]]
-a = [[1 ,2 ,3], [4, 5, 6]]
+a :: [[Integer]]
+a = [[1, 2, 3], [4, 5, 6]]
 
 --   The way to access inner:
 getElementByIndexes i j = a !! i !! j
+
