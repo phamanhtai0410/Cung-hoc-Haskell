@@ -22,8 +22,8 @@ checkMonthlyConsumption consumptionPerHour numberHoursPerDay maxAllowed
   | monthlyUsage == maxAllowed = "Equal to the allowed"
   | monthlyUsage > maxAllowed = "Bigger than the allowed"
   | otherwise = "Smaller than the allowed"
-  where 
-        monthlyUsage = consumptionPerHour * numberHoursPerDay * 30
+  where
+    monthlyUsage = consumptionPerHour * numberHoursPerDay * 30
 
 -- Question 2
 -- Prelude:
@@ -42,8 +42,7 @@ checkMonthlyConsumptionAndExessOrSaving consumptionPerHour numberHoursPerDay max
 -- Write a function that showcases the advantages of using let expressions to split a big expression into smaller ones.
 -- Then, share it with other students in Canvas.
 splitSmaller :: Float -> Float -> Float -> Float
-
-splitSmaller x y z = 
+splitSmaller x y z =
   let func1 = x ** y
       func2 = y ** z
       func3 = z ** x
@@ -73,7 +72,7 @@ sumOfSquareProductAndQuotient x y
     sumSquare =
       let _product = x * y
           _quotient = x / y
-       in (sqrt _product) + (sqrt _quotient)
+       in (_product * _product) + (_quotient * _quotient)
 
 sumOfSquareProductAndQuotient' :: Float -> Float -> Float
 sumOfSquareProductAndQuotient' x y
@@ -81,8 +80,8 @@ sumOfSquareProductAndQuotient' x y
   | otherwise =
     let squareProduct = squareProductInWhere
           where
-            squareProductInWhere = sqrt (x * y)
+            squareProductInWhere = (x * y) * (x * y)
         squareQuotient = squareQuotientInWhere
           where
-            squareQuotientInWhere = sqrt (x / y)
+            squareQuotientInWhere = (x / y) * (x / y)
      in squareProduct + squareQuotient
