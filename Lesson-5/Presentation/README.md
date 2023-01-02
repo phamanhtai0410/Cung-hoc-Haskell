@@ -1,1 +1,1 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phamanhtai0410/Cung-hoc-Haskell/main?urlpath=https%3A%2F%2Fgithub.com%2Fphamanhtai0410%2FCung-hoc-Haskell%2Fblob%2Fmain%2FLesson-5%2FPresentation%2Fhaskell-day-5.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/phamanhtai0410/Cung-hoc-Haskell/main?labpath=%2FLesson-5%2FPresentation%2Fhaskell-day-5.ipynb)
