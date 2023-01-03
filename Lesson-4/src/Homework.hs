@@ -8,8 +8,6 @@ nested = [([1,2],[3,4]), ([5,6],[7,8])]
 getFour :: [([Int], [Int])] -> Int
 getFour [(x1, [x2_1, x2_2]), y] = x2_2
 
-getFour' :: [([Int], [Int])] -> Int
-getFour' [(_, [_, x]), _] = x
 -- Question 2
 -- Write a function that takes a list of elements of any type and, if the list has 3 or more elements, it
 -- removes them. Else, it does nothing. Do it two times, one with multiple function definitions and one with
@@ -25,7 +23,7 @@ checkLengthOfList' obj =
         checkLength x =
             if length x >= 3 then True else False
         remove x = []
-    in if checkLength obj then remove obj else obj
+    in if checkLength obj then remove obj
 
 
 -- Question 3
@@ -52,4 +50,5 @@ implementationOfTail    args    =   tail args
 increaseIfEven :: Int -> Int
 increaseIfEven  a = case a `mod` 2 of
     0   ->      a + 1
+    
 
