@@ -112,7 +112,7 @@ factorial' n
     where result 0 = 1
           result n = n * result(n - 1)
           showFormula 2 = "1 * 2"
-          showFormula n = showFormula(n - 1) ++ " * n"
+          showFormula n = showFormula(n - 1) ++ " * " ++ show n
 
 -- factorial'' :: (Int -> Int) -> (Int -> [Char]) -> [Char]
 -- factorial'' n           =       (factorial' n) ++ " = " ++ show (factorial n)
@@ -147,3 +147,15 @@ calcalateCost   orderList           =       deliveryCost + sum totals
         quantities    =   map snd orderList
         totals        =   zipWith' (*) prices quantities
       
+
+
+factorial1 :: Int -> String 
+factorial1 n  
+  | n < 0     = " không tồn tại" 
+  | n == 0    = " 0! = 1 " 
+  | n == 1    = " 1! = 1 " 
+  | otherwise = show n ++ " ! = " ++ ( printfactorial n ) ++ " = " ++ show ( calcfactorial n ) 
+            where calcfactorial 0 = 1 
+                  calcfactorial n = n * calcfactorial (n-1) 
+                  printfactorial 2 = "1 * 2 " 
+                  printfactorial n = printfactorial (n -1) ++ "*n"
