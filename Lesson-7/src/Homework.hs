@@ -36,35 +36,35 @@
 -- Investigate the `Enum` type class. What behaviours provides?
 
 -- ANSWER:
- In Haskell, the Enum type class provides a set of methods for types that have a concept of enumeration. The Enum type class provides the following methods:
+--  In Haskell, the Enum type class provides a set of methods for types that have a concept of enumeration. The Enum type class provides the following methods:
 
-     succ :: a -> a: This method returns the successor of a given value. 5 => 6
+--      succ :: a -> a: This method returns the successor of a given value. 5 => 6
 
-     pred :: a -> a: This method returns the predecessor of a given value. 5 => 4
+--      pred :: a -> a: This method returns the predecessor of a given value. 5 => 4
 
-     toEnum :: Int -> a: This method converts an Int value to an enumeration value of type a.
+--      toEnum :: Int -> a: This method converts an Int value to an enumeration value of type a.
 
-     fromEnum :: a -> Int: This method converts an enumeration value of type a to an Int value.
+--      fromEnum :: a -> Int: This method converts an enumeration value of type a to an Int value.
 
-     enumFrom :: a -> [a]: This method returns an infinite list of values starting from a given value.
+--      enumFrom :: a -> [a]: This method returns an infinite list of values starting from a given value.
 
-     enumFromThen :: a -> a -> [a]: This method returns an infinite list of values starting from the first given value and stepping by the second given value.
-        enumFromThen 1 2 => [1, 3, 5, 7, ...]
+--      enumFromThen :: a -> a -> [a]: This method returns an infinite list of values starting from the first given value and stepping by the second given value.
+--         enumFromThen 1 2 => [1, 3, 5, 7, ...]
 
-     enumFromTo :: a -> a -> [a]: This method returns a finite list of values starting from the first given value and ending at the second given value.
-        [1..9]
-     enumFromThenTo :: a -> a -> a -> [a]: This method returns a finite list of values starting from the first given value, stepping by the second given value, and ending at the third given value.
+--      enumFromTo :: a -> a -> [a]: This method returns a finite list of values starting from the first given value and ending at the second given value.
+--         [1..9]
+--      enumFromThenTo :: a -> a -> a -> [a]: This method returns a finite list of values starting from the first given value, stepping by the second given value, and ending at the third given value.
     
-    class Enum:
-        succ()
-        ...
+--     class Enum:
+--         succ()
+--         ...
     
-    Int = Enum()
-    Char = Enum()
+--     Int = Enum()
+--     Char = Enum()
 
-For example, Bool is an instance of the Enum type class, so you can use `succ` and `pred` to find the successor and predecessor of a Bool value. You can also use `enumFrom` and `enumFromTo` to generate lists of Bool values.
+-- For example, Bool is an instance of the Enum type class, so you can use `succ` and `pred` to find the successor and predecessor of a Bool value. You can also use `enumFrom` and `enumFromTo` to generate lists of Bool values.
 
-Note that the Enum type class is a subclass of the Eq and Ord type classes, so types that are instances of Enum are also instances of Eq and Ord.
+-- Note that the Enum type class is a subclass of the Eq and Ord type classes, so types that are instances of Enum are also instances of Eq and Ord.
 
 -- Question 4
 -- Add type signatures to the functions below and use type variables and type classes.
