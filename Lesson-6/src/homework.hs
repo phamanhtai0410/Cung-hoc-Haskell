@@ -101,12 +101,13 @@ takeWhite f (x:xs)
 -- Question 7 (More difficult)
 -- Write a function that takes in an integer n, calculates the factorial n! and
 -- returns a string in the form of 1*2* ... *n = n! where n! is the actual result.
-factorial :: Int -> Int
-factorial 0                 =       1
-factorial n                 =       n * factorial (n - 1)
+-- factorial :: Int -> Int
+-- factorial 0                 =       1
+-- factorial n                 =       n * factorial (n - 1)
 
 factorial' :: Int -> String
-factorial' n        
+factorial' n      
+  |   n  < 0          =   "khong ton tai"
   |   n <= 1          =   show n ++ "! = " ++ show 1 
   |   otherwise       =   show n ++ "! = " ++ showFormula n ++ " = " ++ show(result n)
     where result 0 = 1
@@ -142,20 +143,20 @@ deliveryCost = 8.50
 
 calcalateCost :: [(String, Double)] -> Double
 calcalateCost   []                  =       0
-calcalateCost   orderList           =       deliveryCost + sum totals
+calcalateCost   order               =       deliveryCost + sum totals
   where prices        =   map snd bevogBeerPrices
         quantities    =   map snd orderList
         totals        =   zipWith' (*) prices quantities
       
 
 
-factorial1 :: Int -> String 
-factorial1 n  
-  | n < 0     = " không tồn tại" 
-  | n == 0    = " 0! = 1 " 
-  | n == 1    = " 1! = 1 " 
-  | otherwise = show n ++ " ! = " ++ ( printfactorial n ) ++ " = " ++ show ( calcfactorial n ) 
-            where calcfactorial 0 = 1 
-                  calcfactorial n = n * calcfactorial (n-1) 
-                  printfactorial 2 = "1 * 2 " 
-                  printfactorial n = printfactorial (n -1) ++ "*n"
+-- factorial1 :: Int -> String 
+-- factorial1 n  
+--   | n < 0     = " không tồn tại" 
+--   | n == 0    = " 0! = 1 " 
+--   | n == 1    = " 1! = 1 " 
+--   | otherwise = show n ++ " ! = " ++ ( printfactorial n ) ++ " = " ++ show ( calcfactorial n ) 
+--             where calcfactorial 0 = 1 
+--                   calcfactorial n = n * calcfactorial (n-1) 
+--                   printfactorial 2 = "1 * 2 " 
+--                   printfactorial n = printfactorial (n -1) ++ "*n"
