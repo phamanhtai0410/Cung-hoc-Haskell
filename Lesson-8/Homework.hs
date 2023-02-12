@@ -114,3 +114,6 @@ newGrape2 = "Sangiovese"
 
 containsGrape :: [Label] -> Grape -> Bool
 containsGrape _labelList _checkingGrape = any (\x -> _checkingGrape `elem` grapes x) _labelList
+
+containsGrape2 :: Grape -> [Label] -> Bool
+containsGrape2 _checkingGrape = any (\x -> _checkingGrape `elem` grapes x)
